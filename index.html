@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <title>Sarah's Weather App</title>
+    <link
+      rel="stylesheet"
+      href="src/styles.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <div class="row city-search">
+          <div class="col-9 city">
+            <input
+              type="search"
+              placeholder="Search for a City"
+              autocomplete="off"
+              autofocus="on"
+              class="form-control"
+              id="change-city"
+            />
+          </div>
+          <div class="col-3 submit">
+            <input
+              type="submit"
+              class="form-control"
+              value="🔍"
+              id="search"
+            />
+          </div>
+        </div>
+      </form>
+      <button id="locate-me">
+        use current location
+      </button>
+      <hr />
+      <h1>Weather</h1>
+      <h2>Currently</h2>
+      <h3></h3>
+      <h4 id="condition"></h4>
+
+      <div class="row">
+        <div class="col-6 current-temp">
+          🌕<span class="temp" id="temp"></span
+          ><span class="temp-units"
+            ><a href="#" id="celcius"
+              ><strong>C</strong></a
+            >
+            |
+            <a href="#" id="fahrenheit"
+              >F</a
+            ></span
+          >
+        </div>
+        <div class="col-6 p-3">
+          <ul>
+            <li id="humidity">Humidity:</li>
+
+            <li id="wind">Wind:</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="row emojis">
+        <div class="col">⛅</div>
+        <div class="col">☔</div>
+        <div class="col">☔</div>
+        <div class="col">⛅</div>
+        <div class="col">🌞</div>
+      </div>
+      <div class="row weekday">
+        <div class="col">Tomorrow</div>
+        <div class="col">Friday</div>
+        <div class="col">Saturday</div>
+        <div class="col">Sunday</div>
+        <div class="col">Monday</div>
+      </div>
+      <div class="row temp">
+        <div class="col">
+          <strong>27°</strong> 17°
+        </div>
+        <div class="col">
+          <strong>22°</strong> 13°
+        </div>
+        <div class="col">
+          <strong>18°</strong> 11°
+        </div>
+        <div class="col">
+          <strong>19°</strong> 9°
+        </div>
+        <div class="col">
+          <strong>22°</strong> 12°
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
