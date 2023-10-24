@@ -25,6 +25,10 @@ formatDate(now);
 function showCurrentConditions(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.city} Weather`;
+  console.log(response.data);
+  document.querySelector(
+    "#weather-icon"
+  ).innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}">`;
 
   document.querySelector(
     "#temp"

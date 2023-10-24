@@ -88,6 +88,10 @@ p {
   text-transform: capitalize;
 }
 
+#weather-icon {
+  line-height: 1;
+}
+
 .city-search {
   width: 100%;
 }
@@ -115,6 +119,7 @@ p {
 
 .temp {
   text-align: center;
+  line-height: 1;
 }
 
 .temp-units {
