@@ -77,6 +77,10 @@ ul {
   border: solid 2px black;
 }
 
+#git-link {
+  text-align: center;
+}
+
 .city-search {
   width: 100%;
 }
