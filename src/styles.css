@@ -102,6 +102,8 @@ p {
 
 .current-temp {
   font-size: 65px;
+  text-align: center;
+  line-height: 1;
 }
 .details {
   vertical-align: middle;
@@ -117,14 +119,14 @@ p {
   font-weight: bold;
 }
 
-.temp {
-  text-align: center;
-  line-height: 1;
+#temp {
+  position: relative;
+  top: 5px;
 }
 
 .temp-units {
   font-size: 15px;
   position: relative;
-  bottom: 36px;
+  bottom: 30px;
   margin-left: 3px;
 }
