@@ -84,6 +84,9 @@ p {
 #git-link {
   text-align: center;
 }
+#condition {
+  text-transform: capitalize;
+}
 
 .city-search {
   width: 100%;
