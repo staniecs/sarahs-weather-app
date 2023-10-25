@@ -109,8 +109,8 @@ function showFahrenheit(event) {
   );
   tempElement.innerHTML = `${tempF}°`;
 
-  fahrenheitLink.innerHTML = `<span id = "current-unit">F</span>`;
-  celciusLink.innerHTML = `C`;
+  fahrenheitLink.classList.add("active-unit");
+  celciusLink.classList.remove("active-unit");
 }
 
 function showCelcius(event) {
@@ -120,8 +120,8 @@ function showCelcius(event) {
   tempElement.innerHTML = `${Math.round(
     celciusTemperature
   )}°`;
-  celciusLink.innerHTML = `<span id = "current-unit">C</span>`;
-  fahrenheitLink.innerHTML = `F`;
+  celciusLink.classList.add("active-unit");
+  fahrenheitLink.classList.remove("active-unit");
 }
 let fahrenheitLink = document.querySelector(
   "#fahrenheit"
