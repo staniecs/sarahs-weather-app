@@ -52,6 +52,7 @@ p {
 }
 .container {
   margin-top: 20px;
+  margin-bottom: 5px;
   padding: 30px 25px;
   border: solid 2px rgb(141, 67, 168);
   border-radius: 20px;
@@ -129,4 +130,10 @@ p {
   position: relative;
   bottom: 30px;
   margin-left: 3px;
+}
+
+#current-unit {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
 }
