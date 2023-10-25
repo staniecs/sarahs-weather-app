@@ -30,10 +30,13 @@ function showCurrentConditions(response) {
     "#weather-icon"
   ).innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}">`;
 
+  celciusTemperature =
+    response.data.temperature.current;
+
   document.querySelector(
     "#temp"
   ).innerHTML = `${Math.round(
-    response.data.temperature.current
+    celciusTemperature
   )}°`;
 
   document.querySelector(
@@ -51,41 +54,6 @@ function showCurrentConditions(response) {
   ).innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )} km/h`;
-  function showFahrenheit(event) {
-    event.preventDefault();
-    let temp = document.querySelector("#temp");
-    let tempC = `${Math.round(
-      response.data.temperature.current
-    )}`;
-
-    let tempF = Math.round(tempC * (9 / 5) + 32);
-    temp.innerHTML = `${tempF}°`;
-
-    fahrenheit.innerHTML = `<span id = "current-unit">F</span>`;
-    celcius.innerHTML = `C`;
-  }
-  let fahrenheit = document.querySelector(
-    "#fahrenheit"
-  );
-  fahrenheit.addEventListener(
-    "click",
-    showFahrenheit
-  );
-
-  function showCelcius(event) {
-    event.preventDefault();
-    let temp = document.querySelector("#temp");
-    temp.innerHTML = `${Math.round(
-      response.data.temperature.current
-    )}°`;
-    celcius.innerHTML = `<strong>C</strong>`;
-    fahrenheit.innerHTML = `F`;
-  }
-
-  let celcius =
-    document.querySelector("#celcius");
-
-  celcius.addEventListener("click", showCelcius);
 }
 
 //search for a city
@@ -130,5 +98,46 @@ locateMeButton.addEventListener(
   "click",
   showLocationWeather
 );
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let tempElement =
+    document.querySelector("#temp");
+
+  let tempF = Math.round(
+    celciusTemperature * (9 / 5) + 32
+  );
+  tempElement.innerHTML = `${tempF}°`;
+
+  fahrenheitLink.innerHTML = `<span id = "current-unit">F</span>`;
+  celciusLink.innerHTML = `C`;
+}
+
+function showCelcius(event) {
+  event.preventDefault();
+  let tempElement =
+    document.querySelector("#temp");
+  tempElement.innerHTML = `${Math.round(
+    celciusTemperature
+  )}°`;
+  celciusLink.innerHTML = `<span id = "current-unit">C</span>`;
+  fahrenheitLink.innerHTML = `F`;
+}
+let fahrenheitLink = document.querySelector(
+  "#fahrenheit"
+);
+fahrenheitLink.addEventListener(
+  "click",
+  showFahrenheit
+);
+let celciusLink =
+  document.querySelector("#celcius");
+
+celciusLink.addEventListener(
+  "click",
+  showCelcius
+);
+
+let celciusTemperature = null;
 
 searchCity("Wroclaw");
