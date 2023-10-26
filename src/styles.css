@@ -22,6 +22,7 @@ button:hover {
 }
 hr {
   margin: 15px;
+  color: rgb(141, 67, 168);
 }
 h1 {
   text-align: center;
@@ -109,16 +110,6 @@ p {
 .details {
   vertical-align: middle;
 }
-.emojis {
-  font-size: 50px;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.weekday {
-  text-align: center;
-  font-weight: bold;
-}
 
 #temp {
   position: relative;
@@ -143,4 +134,19 @@ p {
 }
 a {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  opacity: 0.8;
+}
+.forecast-date {
+  font-weight: bold;
+}
+
+.forecast-temp-max {
+  font-weight: bold;
+}
+.forecast-temp-min {
+  color: rgb(141, 67, 168);
 }
