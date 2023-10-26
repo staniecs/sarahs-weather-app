@@ -21,6 +21,52 @@ function formatDate(time) {
 }
 formatDate(now);
 
+function displayForecast() {
+  let forecastElement =
+    document.querySelector("#forecast");
+
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+  ];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+         <div class="col">
+            <div class="forecast-weather-icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                alt="forecast"
+                width="70px"
+              />
+            </div>
+            <div class="forecast-date">
+              ${day}
+            </div>
+            <div class="forecast-temps">
+              <span class="forecast-temp-max"
+                >27°</span
+              >
+              |
+              <span class="forecast-temp-min"
+                >17°</span
+              >
+            </div>
+          </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 //show weather in searched city and current location
 function showCurrentConditions(response) {
   let h1 = document.querySelector("h1");
@@ -141,3 +187,4 @@ celciusLink.addEventListener(
 let celciusTemperature = null;
 
 searchCity("Wroclaw");
+displayForecast();
