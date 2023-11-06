@@ -21,7 +21,14 @@ function formatDate(time) {
 }
 formatDate(now);
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "b3b36of7f40tfb2fc5ea76728725e80c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement =
     document.querySelector("#forecast");
 
@@ -64,7 +71,6 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 //show weather in searched city and current location
@@ -100,6 +106,8 @@ function showCurrentConditions(response) {
   ).innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )} km/h`;
+
+  getForecast(response.data.city);
 }
 
 //search for a city
@@ -187,4 +195,4 @@ celciusLink.addEventListener(
 let celciusTemperature = null;
 
 searchCity("Wroclaw");
-displayForecast();
+//displayForecast();
