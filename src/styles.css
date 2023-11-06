@@ -51,6 +51,10 @@ ul {
 p {
   font-size: 14px;
 }
+
+a:hover {
+  font-weight: bold;
+}
 .container {
   margin-top: 20px;
   margin-bottom: 5px;

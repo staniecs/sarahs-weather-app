@@ -42,7 +42,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecastElement =
     document.querySelector("#forecast");
 
@@ -209,4 +208,3 @@ celciusLink.addEventListener(
 let celciusTemperature = null;
 
 searchCity("Wroclaw");
-//displayForecast();
